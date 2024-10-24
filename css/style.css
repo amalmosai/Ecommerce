@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Univers Next", sans-serif;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* start shopify and count down section */
+.shopify-section {
+  width: 100%;
+  height: 65px;
+  padding: 10px 0;
+  background-color: rgb(28, 28, 28);
+}
+
+.shopify-section .sale {
+  align-items: center;
+}
+.shopify-section .sale a {
+  color: #fff;
+  padding-left: 8px;
+  position: relative;
+  font-size: 14px;
+}
+.shopify-section .sale a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: white;
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+.shopify-section .sale a:hover::after {
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.countdown {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center; /* Center countdown text */
+  text-align: center;
+  font-size: 14px;
+}
+.time-unit {
+  text-align: center;
+}
+.colon {
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0 6px;
+}
+
+/* footer */
+.footer {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  color: #000;
+  text-align: left;
+}
+.footer a {
+  color: #7b7979;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer .newsletter input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+.footer .newsletter button {
+  width: 60%;
+  padding: 10px;
+  background-color: rgb(28, 28, 28); /* Initial background color */
+  color: #fff; /* Initial text color */
+  border: 1px solid transparent; /* Initial border color (transparent) */
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Transition for text color and border color */
+}
+
+.footer .newsletter button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Background color on hover */
+  transform: translateX(-100%); /* Start position for the transition */
+  transition: transform 0.5s ease-in-out; /* Transition for the background */
+}
+
+.footer .newsletter button:hover {
+  color: rgb(28, 28, 28); /* Change text color to black on hover */
+  border-color: rgb(28, 28, 28); /* Change border color to black on hover */
+}
+
+.footer .newsletter button:hover::before {
+  transform: translateX(0); /* Move the background into view */
+}
+
+.footer .social-icons i {
+  font-size: 20px;
+  margin-right: 10px;
+  justify-content: space-between;
+  color: #706d6d;
+}
+.footer .social-icons i:hover {
+  color: #000;
+}
+.footer .country-selector {
+  margin-top: 20px;
+}
+.footer .payment-icons img {
+  width: 40px;
+  margin-right: 10px;
+}
