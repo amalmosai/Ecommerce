@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  max-width: 95%;
   margin: 0 auto;
 }
 
@@ -37,9 +37,10 @@ img {
 .shopify-section .sale {
   align-items: center;
 }
+
 .shopify-section .sale a {
   color: #fff;
-  padding-left: 8px;
+  margin-left: 10px;
   position: relative;
   font-size: 14px;
 }
@@ -61,13 +62,10 @@ img {
   transition: transform 0.3s ease;
 }
 .countdown {
-  width: 20%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: center; /* Center countdown text */
-  text-align: center;
+  justify-content: right;
   font-size: 14px;
+  align-items: center;
 }
 .time-unit {
   text-align: center;
@@ -77,36 +75,47 @@ img {
   line-height: 1;
   padding: 0 6px;
 }
+/* end shopify and count down section */
 
 /* footer */
 .footer {
   padding: 40px 0;
-  background-color: #f8f9fa;
-  color: #000;
+  color: rgb(28, 28, 28, 0.6);
   text-align: left;
 }
 .footer a {
-  color: #7b7979;
+  color: rgb(28, 28, 28, 0.6);
   text-decoration: none;
 }
-.footer a:hover {
-  text-decoration: underline;
+.footer h6 {
+  font-weight: 400;
+  padding-bottom: 6px;
+  color: rgb(28, 28, 28, 1);
 }
+
+.footer ul li {
+  padding-top: 8px;
+}
+.footer a:hover {
+  color: rgb(28, 28, 28, 1);
+}
+
 .footer .newsletter input[type="email"] {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
 }
 .footer .newsletter button {
-  width: 60%;
+  width: 40%;
   padding: 10px;
-  background-color: rgb(28, 28, 28); /* Initial background color */
-  color: #fff; /* Initial text color */
-  border: 1px solid transparent; /* Initial border color (transparent) */
+  background-color: rgb(28, 28, 28);
+  color: #fff;
+  border: 0.5px solid transparent;
   position: relative;
   overflow: hidden;
-  transition: color 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Transition for text color and border color */
+  z-index: 1;
+  transition: border-color 0.5s ease-in, color 0.5s ease-in-out;
 }
 
 .footer .newsletter button::before {
@@ -116,33 +125,56 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff; /* Background color on hover */
-  transform: translateX(-100%); /* Start position for the transition */
-  transition: transform 0.5s ease-in-out; /* Transition for the background */
+  background-color: #fff;
+  transform-origin: left;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
 
 .footer .newsletter button:hover {
-  color: rgb(28, 28, 28); /* Change text color to black on hover */
-  border-color: rgb(28, 28, 28); /* Change border color to black on hover */
+  color: #000;
 }
 
 .footer .newsletter button:hover::before {
-  transform: translateX(0); /* Move the background into view */
+  transform: translateX(0);
 }
 
 .footer .social-icons i {
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 18px;
+  padding-right: 40px;
   justify-content: space-between;
-  color: #706d6d;
+  color: rgb(28, 28, 28, 0.6);
+  cursor: pointer;
 }
 .footer .social-icons i:hover {
   color: #000;
 }
-.footer .country-selector {
-  margin-top: 20px;
+.footer .about a {
+  color: rgb(28, 28, 28, 0.6);
+  position: relative;
+  font-size: 14px;
 }
+.footer .about a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: rgb(28, 28, 28, 0.6);
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+.footer .about a:hover::after {
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
 .footer .payment-icons img {
   width: 40px;
   margin-right: 10px;
 }
+/* end footer */
