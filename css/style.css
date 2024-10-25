@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -77,6 +79,235 @@ img {
 }
 /* end shopify and count down section */
 
+/* ***************start header****************************** */
+.header {
+  height: 100vh;
+  position: relative;
+}
+video,
+.header img {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.header-content {
+  position: relative;
+  padding-top: 150px;
+  color: #fff;
+  text-align: center;
+}
+.header p {
+  font-size: clamp(25px, 4vw, 40px);
+  margin-top: 10px;
+}
+.header-content h6 {
+  font-size: 20px;
+}
+.header-content h1 {
+  font-size: 76px;
+}
+.header-content button {
+  display: block;
+}
+
+.header-content .button a {
+  display: inline-block;
+  width: 15%;
+  padding: 10px 36px;
+  margin: 16px 8px;
+  text-decoration: none;
+}
+
+.header-content .button .women-btn {
+  background-color: transparent;
+  color: rgb(28, 28, 28);
+  border: 1px solid transparent;
+  z-index: 1;
+  position: relative;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in;
+}
+
+.header-content .button .men-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid transparent;
+  z-index: 1;
+  position: relative;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in;
+}
+
+.header-content .button .women-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(28, 28, 28);
+  background-color: #fff;
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.header-content .button .men-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgb(28, 28, 28);
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.header-content .button .women-btn:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.header-content .button .women-btn:hover::after {
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.header-content .button .men-btn:hover {
+  color: rgb(28, 28, 28);
+  border-color: rgb(28, 28, 28);
+}
+
+.header-content .button .men-btn:hover::after {
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.header .third-slide {
+  width: 36%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border: 2px solid #fff;
+  position: relative;
+  text-align: center;
+  height: auto;
+  top: 30%;
+  transform: translateY(-50%);
+}
+.header .third-slide .women-btn {
+  width: 40%;
+  font-size: 14px;
+  padding: 10px 4px;
+}
+
+/*start slider section */
+
+.header-slider {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.header-slideshow {
+  overflow: hidden;
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.header-slider img {
+  width: 100%;
+  display: block;
+  transition: transform 1s ease;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--green);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.numbertext {
+  color: var(--dark);
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dots {
+  text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 15px 2px;
+  background-color: #d4d1d1;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dots {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  text-align: right;
+  z-index: 10;
+}
+.active,
+.dot:hover {
+  background-color: #fff;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+/* end slider section */
+
+/* ********************end header******************* */
 /* footer */
 .footer {
   padding: 40px 0;

@@ -1,3 +1,4 @@
+// ****************************count down****************************
 const targetDate = new Date("Novmber 4, 2024 00:00:00").getTime();
 
 const countdownFunction = setInterval(() => {
@@ -38,3 +39,46 @@ const countdownFunction = setInterval(() => {
     document.getElementById("countdown").innerHTML = "Countdown Finished!";
   }
 }, 1000);
+
+//****************slider******************* */
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  setTimeout(() => showSlides(slideIndex), 10000);
+}
