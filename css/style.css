@@ -1,3 +1,4 @@
+/* ************************************ Start Global Style *******************************************  */
 *,
 ::before,
 ::after {
@@ -6,14 +7,131 @@
   margin: 0;
 }
 
+:root {
+  --page-overlay: 0 0 0 / 0.4;
+  --page-background: #efefef;
+  --on-sale-text: 227 44 43;
+  --on-sale-badge-background: 227 44 43;
+  --on-sale-badge-text: 255 255 255;
+  --sold-out-badge-background: 239 239 239;
+  --sold-out-badge-text: 0 0 0 / 0.65;
+  --custom-badge-background: 239 239 239;
+  --custom-badge-text: 0 0 0 / 0.65;
+  --star-color: 28 28 28;
+  --success-background: 212 227 203;
+  --success-text: 48 122 7;
+  --warning-background: 253 241 224;
+  --warning-text: 237 138 0;
+  --error-background: 243 204 204;
+  --error-text: 203 43 43;
+  --container-max-width: 100%;
+  --container-xxs-max-width: 27.5rem;
+  --container-xs-max-width: 42.5rem;
+  --container-sm-max-width: 61.25rem;
+  --container-md-max-width: 71.875rem;
+  --container-lg-max-width: 78.75rem;
+  --container-xl-max-width: 85rem;
+  --container-gutter: 1.25rem;
+  --section-vertical-spacing: 3rem;
+  --section-vertical-spacing-tight: 2.5rem;
+  --section-stack-gap: 2.5rem;
+  --section-stack-gap-tight: 2.25rem;
+  --form-gap: 1.25rem;
+  --fieldset-gap: 1rem;
+  --form-control-gap: 0.625rem;
+  --checkbox-control-gap: 0.75rem;
+  --input-padding-block: 0.65rem;
+  --input-padding-inline: 0.8rem;
+  --checkbox-size: 0.875rem;
+  --sticky-area-height: calc(
+    var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px) +
+      var(--header-is-sticky, 0) * var(--header-is-visible, 1) *
+      var(--header-height, 0px)
+  );
+  --transform-logical-flip: 1;
+  --transform-origin-start: left;
+  --transform-origin-end: right;
+  --heading-font-family: "Univers Next", sans-serif;
+  --heading-font-weight: 400;
+  --heading-font-style: normal;
+  --heading-text-transform: uppercase;
+  --heading-letter-spacing: 0.18em;
+  --text-font-family: "Univers Next", sans-serif;
+  --text-font-weight: 400;
+  --text-font-style: normal;
+  --text-letter-spacing: 0em;
+  --button-font: var(--text-font-style) var(--text-font-weight) var(--text-sm) /
+    1.65 var(--text-font-family);
+  --button-text-transform: uppercase;
+  --button-letter-spacing: 0.18em;
+  --text-heading-size-factor: 1;
+  --text-h1: max(
+    0.6875rem,
+    clamp(1.375rem, 1.146341463414634rem + 0.975609756097561vw, 2rem) *
+      var(--text-heading-size-factor)
+  );
+  --text-h2: max(
+    0.6875rem,
+    clamp(1.25rem, 1.0670731707317074rem + 0.7804878048780488vw, 1.75rem) *
+      var(--text-heading-size-factor)
+  );
+  --text-h3: max(
+    0.6875rem,
+    clamp(1.125rem, 1.0335365853658536rem + 0.3902439024390244vw, 1.375rem) *
+      var(--text-heading-size-factor)
+  );
+  --text-h4: max(
+    0.6875rem,
+    clamp(1rem, 0.9542682926829268rem + 0.1951219512195122vw, 1.125rem) *
+      var(--text-heading-size-factor)
+  );
+  --text-h5: calc(0.875rem * var(--text-heading-size-factor));
+  --text-h6: calc(0.75rem * var(--text-heading-size-factor));
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --rounded-full: 9999px;
+  --button-border-radius: 0rem;
+  --input-border-radius: 0rem;
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.05);
+  --shadow: 0 5px 15px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 5px 30px rgb(0 0 0 / 0.05);
+  --shadow-block: px px px rgb(var(--text-primary) / 0);
+  --circle-button-background: 255 255 255;
+  --circle-button-text-color: 28 28 28;
+}
+
 body {
-  font-family: "Univers Next", sans-serif;
+  background: var(--page-background);
+  font: var(--text-font-style) var(--text-font-weight) var(--text-base) / 1.65
+    var(--text-font-family);
+  letter-spacing: var(--text-letter-spacing);
   color: white;
 }
 
-.container {
-  max-width: 95%;
-  margin: 0 auto;
+/* Text Style */
+.heading,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.prose :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+  overflow-wrap: anywhere;
+}
+
+.h6,
+:where(.prose h6) {
+  font-size: var(--text-h6);
+  line-height: 1.7;
 }
 
 a {
@@ -28,7 +146,26 @@ img {
   width: 100%;
 }
 
-/* start shopify and count down section */
+/* Resable */
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 105px;
+  padding-bottom: 80px;
+}
+
+.v-stack {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  display: grid;
+}
+
+/* ************************************ End Global Style *******************************************  */
+
+/**************************** start shopify and count down section **********************************8*/
 .shopify-section {
   width: 100%;
   height: 65px;
@@ -88,7 +225,7 @@ video,
 .header img {
   position: absolute;
   width: 100%;
-  height: 80%;
+  height: 70%;
   object-fit: cover;
 }
 
@@ -174,6 +311,7 @@ video,
 
 .header-content .button .women-btn:hover::after {
   transform: scaleX(0);
+  transform-origin: right;
   transition: transform 0.3s ease;
 }
 .header-content .button .men-btn:hover {
@@ -183,6 +321,7 @@ video,
 
 .header-content .button .men-btn:hover::after {
   transform: scaleX(0);
+  transform-origin: right;
   transition: transform 0.3s ease;
 }
 
@@ -279,7 +418,7 @@ video,
 }
 .dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 60px;
   right: 80px;
   text-align: right;
   z-index: 10;
@@ -308,7 +447,252 @@ video,
 /* end slider section */
 
 /* ********************end header******************* */
+/* ************************************ Start Second section **************************************** */
+.product-title {
+  color: #1c1c1c;
+}
+
+.featured-collections-navigation button {
+  font-size: 2.3rem;
+  margin: 0 0.5rem;
+}
+.featured-collections-navigation button:hover {
+  text-decoration: none;
+}
+
+.featured-collections-navigation button[aria-current="true"] {
+  font-weight: 100;
+  position: relative;
+  width: fit-content;
+}
+.featured-collections-navigation button[aria-current="true"]::after {
+  content: "";
+  display: block;
+  width: 85%;
+  height: 1px;
+  background-color: currentColor;
+  position: absolute;
+  bottom: 18%;
+  left: 8%;
+  transform: translateY(2px);
+}
+
+.scroll-area {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* product */
+.product-card {
+  scroll-snap-align: start;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 1.25rem;
+  display: grid;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-card img {
+  object-fit: contain;
+  object-position: center;
+  margin-inline: auto;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.badge {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: uppercase;
+  align-items: center;
+  width: max-content;
+  padding: 0.0625rem 0.3125rem;
+  font-size: 0.625rem;
+  display: flex;
+}
+
+.badge-new {
+  background: rgb(var(--custom-badge-background));
+  color: rgb(var(--custom-badge-text));
+}
+
+.product-card__quick-add-button {
+  background: rgb(var(--circle-button-background));
+  color: rgb(var(--circle-button-text-color));
+  z-index: 1;
+  padding: 0.4rem 0.625rem;
+  position: absolute;
+  inset-block-end: 0.5rem;
+  inset-inline-end: 0.5rem;
+  border: none;
+}
+.best-seller .button {
+  display: block;
+  text-align: center;
+}
+
+.best-seller .button a {
+  display: inline-block;
+  width: 16%;
+  padding: 10px 36px;
+  margin: 16px 8px;
+  text-decoration: none;
+}
+
+.best-seller .button a {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid transparent;
+  z-index: 1;
+  position: relative;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in;
+}
+
+.best-seller .button a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(28, 28, 28);
+  background-color: rgb(28, 28, 28);
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.best-seller .button a:hover {
+  color: rgb(28, 28, 28);
+  border-color: rgb(28, 28, 28);
+}
+
+.best-seller .button a:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+#carousel-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+#product-container {
+  display: flex; /* Use flexbox for product cards */
+  flex-grow: 1; /* Allow the product container to take up available space */
+  justify-content: center; /* Center product cards horizontally */
+}
+
+.slider-button {
+  background-color: #fff;
+  color: rgb(28, 28, 28);
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 22px;
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+.slider-button:hover {
+  border: none;
+}
+@media screen and (pointer: fine) {
+  .product-card__quick-add-button {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(5px);
+  }
+
+  .product-card__quick-add-button svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .product-card__quick-add-button:hover svg {
+    transform: rotate(90deg);
+  }
+
+  #card:hover .product-card__quick-add-button {
+    transform: translateY(0);
+  }
+}
+
+/* *************************************************************************************************** */
+/* ****************new product section**************************/
+.new-product {
+  background-image: url("https://prestige-theme-allure.myshopify.com/cdn/shop/files/Image_with_text_overlay_-_Desktop_-_home.jpg?v=1680765088&width=2000");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+.new-product-content .button {
+  display: block;
+}
+
+.new-product-content .button a {
+  display: inline-block;
+  width: 10%;
+  padding: 10px 36px;
+  margin-top: 16px;
+  text-decoration: none;
+}
+
+.new-product-content .button a {
+  background-color: transparent;
+  color: rgb(28, 28, 28);
+  border: 1px solid transparent;
+  z-index: 1;
+  position: relative;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in;
+}
+
+.new-product-content .button a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(28, 28, 28);
+  background-color: #fff;
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.new-product-content .button a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.new-product-content .button a:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* ********************************************************** */
 /* footer */
+footer {
+  background-color: #fff;
+}
 .footer {
   padding: 40px 0;
   color: rgb(28, 28, 28, 0.6);
@@ -356,19 +740,23 @@ video,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgb(28, 28, 28);
   transform-origin: left;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
   z-index: -1;
 }
 
 .footer .newsletter button:hover {
-  color: #000;
+  color: rgb(28, 28, 28);
+  border-color: rgb(28, 28, 28);
+  background-color: #fff;
 }
 
 .footer .newsletter button:hover::before {
-  transform: translateX(0);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 .footer .social-icons i {
