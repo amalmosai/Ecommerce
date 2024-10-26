@@ -220,6 +220,7 @@ section {
   background-color: transparent !important;
   position: fixed !important;
   width: 100%;
+  height: 12vh;
   top: 10%;
   left: 0;
   z-index: 1000;
@@ -763,6 +764,7 @@ header {
   display: flex;
   align-items: flex-end;
   padding-bottom: 60px;
+  text-align: left;
 }
 
 .new-product-content .button {
@@ -921,3 +923,121 @@ footer {
   margin-right: 10px;
 }
 /* end footer */
+
+/* responsive design  */
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 786px) {
+  .countdown {
+    display: flex;
+    justify-content: right;
+    font-size: 11px;
+    align-items: center;
+  }
+
+  /* navbar */
+  .navbar {
+    height: 10vh;
+  }
+  .navbar-brand {
+    position: relative;
+    display: block;
+    width: 200px; /* Match your logo width */
+    height: 50px; /* Adjust based on your logo height */
+  }
+  .navbar-brand img {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    right: 0;
+    width: 55%;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+  /* header */
+  .header {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+  }
+  .dots {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-align: right;
+    z-index: 10;
+  }
+  .header-content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+
+  .header-content h6 {
+    font-size: 20px;
+  }
+  .header-content h1 {
+    font-size: 40px;
+  }
+  .header .third-slide {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border: 2px solid #fff;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header .third-slide .women-btn {
+    width: 60%;
+    font-size: 14px;
+    padding: 10px 4px;
+  }
+  /* new product secion */
+
+  .new-product {
+    background-image: url("https://prestige-theme-allure.myshopify.com/cdn/shop/files/Image_with_text_overlay_-_Desktop_-_home.jpg?v=1680765088&width=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .new-product-content .button a {
+    display: inline-block;
+    width: 35%;
+    padding: 10px 36px;
+    margin-top: 16px;
+    text-decoration: none;
+  }
+  /* footer */
+  .footer h6 {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 527px) {
+  .shopify-section .sale a {
+    display: none;
+  }
+
+  .shopify-section .sale span {
+    font-size: 12px;
+  }
+}
