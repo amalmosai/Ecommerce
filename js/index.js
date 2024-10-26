@@ -39,7 +39,15 @@ const countdownFunction = setInterval(() => {
     document.getElementById("countdown").innerHTML = "Countdown Finished!";
   }
 }, 1000);
-
+// *********************nav*****************/
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 10) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
 //****************slider******************* */
 let slideIndex = 1;
 showSlides(slideIndex);
