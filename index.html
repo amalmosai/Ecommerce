@@ -30,9 +30,8 @@
     <!-- End Shopify Section -->
     <!-- Start navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button"  id="menu-btn">
+                <span class="navbar-toggler-icon"> <i class="fas fa-bars"></i></span>
             </button>
             <div class="d-flex justify-content-between align-items-center w-100">
               <div class="d-none d-lg-flex flex-grow-1 justify-content-start collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,8 +59,8 @@
                   <img class="dark-logo" src="https://prestige-theme-allure.myshopify.com/cdn/shop/files/logo.png?v=1680783645&width=260">
                 </a>
               </div>
-              <div class="col-5 col-md-4 d-flex flex-grow-1 justify-content-end">
-                  <ul class="nav d-flex justify-content-center">
+              <div class="col-4 col-md-4 d-flex justify-content-end">
+                  <ul class="nav">
                       <li class="nav-item">
                           <a class="nav-link d-none d-md-block p-lg-3" href="#">
                               <i class="fas fa-user"></i>
@@ -69,19 +68,48 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link p-lg-3" href="#">
-                              <i class="fas fa-search"></i>
+                              <i class="fas fa-search icon"></i>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link p-lg-3" href="#">
-                              <i class="fas fa-shopping-cart"></i>
+                              <i class="fas fa-shopping-bag icon"></i>
                           </a>
                       </li>
                   </ul>
               </div>
             </div>
-        </div>
     </nav>
+    <div class="sidebar" id="sidebar">
+      <div class="close-btn" id="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="#">
+        WOMEN
+        <i class="fas fa-chevron-right"></i>
+      </a>
+      <a href="#">
+        MEN
+        <i class="fas fa-chevron-right"></i>
+      </a>
+      <a href="#">
+        ABOUT
+        <i class="fas fa-chevron-right"></i>
+      </a>
+      <a href="#"> BLOG </a>
+      <a href="#"> THEME FEATURES </a>
+      <div class="currency">
+        <img
+          alt="Flag of the United States"
+          height="20"
+          src="https://storage.googleapis.com/a1aa/image/jGl6VQjK7JIyN5W5bZESHzNY0CL19HVJI0QVghFRkKDgeX1JA.jpg"
+          width="20"
+        />
+        <select>
+          <option>USD $</option>
+        </select>
+      </div>
+    </div>
     <!-- End navbar -->  
     <!-- Start header  -->
       <header>

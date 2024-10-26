@@ -48,6 +48,15 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("scrolled");
   }
 });
+
+document.getElementById("menu-btn").addEventListener("click", function () {
+  document.getElementById("sidebar").style.left = "0";
+});
+
+document.getElementById("close-btn").addEventListener("click", function () {
+  document.getElementById("sidebar").style.left = "-300px";
+});
+
 //****************slider******************* */
 let slideIndex = 1;
 showSlides(slideIndex);
